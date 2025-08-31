@@ -1,0 +1,540 @@
+{
+    "info": {
+        "name": "SGHSS Administração - RU 4493981",
+        "_postman_id": "00000000-1111-2222-3333-sghssfinal",
+        "description": "Coleção de testes completa para administração do SGHSS",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Registrar Administrador",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"nome\": \"Admin\",\n  \"email\": \"admin@hospital.com\",\n  \"senha\": \"123456\",\n  \"role\": \"admin\"\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:5000/auth/register",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "auth",
+                        "register"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Login Administrador (Get Token)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"email\": \"admin@hospital.com\",\n  \"senha\": \"123456\"\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:5000/auth/login",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "auth",
+                        "login"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Cadastrar Profissional",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"nome\": \"Dra. Ana\",\n  \"crm\": \"CRM123\",\n  \"especialidade\": \"Cardiologia\",\n  \"email\": \"ana@ex.com\",\n  \"senha\": \"123456\",\n  \"tipo\": \"medico\"\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/admin/profissionais",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "admin",
+                        "profissionais"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Cadastrar Paciente",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"nome\": \"Paciente Teste\",\n  \"cpf\": \"12345678901\",\n  \"data_nascimento\": \"1990-01-01\",\n  \"telefone\": \"11999999999\",\n  \"email\": \"paciente@ex.com\"\n \"senha\": \"123456\",\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/admin/pacientes",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "admin",
+                        "pacientes"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Listar Administradores",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/administradores",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "administradores"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Listar Profissionais",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/profissionais",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "profissionais"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Listar Pacientes",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/pacientes",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "pacientes"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Cadastrar Leito",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"numero\": \"101A\",\n  \"tipo\": \"UTI\"\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/leitos",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "leitos"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Iniciar Internação",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"paciente_id\": 1,\n  \"leito_id\": 1\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/internacoes",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "internacoes"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Encerrar Internação",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/internacoes/1/alta",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "internacoes",
+                        "1",
+                        "alta"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Listar Leitos",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/leitos",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "leitos"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Listar Internações",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/internacoes",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "internacoes"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Cadastrar Suprimento",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"nome\": \"Máscara Cirúrgica\",\n    \"descricao\": \"Descartável\",\n   \"quantidade\": 500\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/suprimentos",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "suprimentos"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Listar Suprimentos",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/suprimentos",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "suprimentos"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Deletar Suprimento",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/suprimentos/1",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "suprimentos",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Adicionar Relatório Financeiro",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"tipo\": \"Receita\",\n  \"descricao\": \"Repasse SUS\",\n  \"valor\": 15000.75\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/admin/relatorios",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "admin",
+                        "relatorios"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Listar Relatórios Financeiros",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/admin/relatorios",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "admin",
+                        "relatorios"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Listar Relatórios Financeiros por Tipo",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/administracao/admin/relatorios?tipo=Receita",
+                    "protocol": "http",
+                    "host": [
+                        "127.0.0.1"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "administracao",
+                        "admin",
+                        "relatorios"
+                    ],
+                    "query": [
+                        {
+                            "key": "tipo",
+                            "value": "Receita"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "variable": [
+        {
+            "key": "token",
+            "value": ""
+        }
+    ]
+}
