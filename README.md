@@ -41,15 +41,15 @@ git clone https://github.com/sabrinads23/TrabalhoFinal_SGHSS_Backend.git
 # Entrar na pasta
 cd TrabalhoFinal_SGHSS_Backend
 ```
-Ou baixar como ZIP o arquivo SGHSS_4493981.zip
-Em Code → Download ZIP no GitHub.
+Ou baixar como ZIP, 
+Em Code o arquivo SGHSS_4493981.zip → Download ZIP no GitHub.
 Extraia o ZIP.
-Abra o terminal e entre na pasta.
+2) Abra o terminal CMD e entre na pasta onde o arquivo foi extraido.
 ```bash
 Exemplo:
 cd C:\Users\Usuario\Desktop\SGHSS_4493981
 ```
-2) Criar ambiente virtual (venv)
+3) Criar ambiente virtual (venv)
 ```bash
 Windows (PowerShell)
 python -m venv venv
@@ -65,12 +65,12 @@ source venv/bin/activate
 ```
 Você saberá que o venv está ativo quando aparecer (venv) no início da linha do terminal.
 
-3) Instalar dependências
+4) Instalar dependências
 ```bash
 pip install -r requirements.txt
 ```
 
-4) Rodar a aplicação
+5) Rodar a aplicação
 ```bash
 python app.py
 ```
@@ -78,7 +78,7 @@ Se tudo der certo, aparecerá:
 ```bash
 * Running on http://127.0.0.1:5000
 ```
-5) Acessar e testar
+6) Acessar e testar
 No Postman:
 ```bash
 Configure a URL base como http://127.0.0.1:5000
@@ -89,7 +89,7 @@ Configure os demais itens conforme a documentação anexada "Endpoints_SGHSS"
 Comece com Registrar Administrador e depois faça login como o administrador criado para pegar o token JWT
 Envie esse token como Bearer Token nas demais requisições
 ```
-6) Parar o servidor
+7) Parar o servidor
 ```bash
 Ctrl + C
 ```
