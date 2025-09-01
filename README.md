@@ -41,11 +41,14 @@ git clone https://github.com/sabrinads23/TrabalhoFinal_SGHSS_Backend.git
 # Entrar na pasta
 cd TrabalhoFinal_SGHSS_Backend
 ```
-Ou baixar como ZIP
-Clique em Code → Download ZIP no GitHub.
+Ou baixar como ZIP o arquivo SGHSS_4493981.zip
+Em Code → Download ZIP no GitHub.
 Extraia o ZIP.
-Abra o terminal dentro da pasta extraída.
-
+Abra o terminal e entre na pasta.
+```bash
+Exemplo:
+cd C:\Users\Usuario\Desktop\SGHSS_4493981
+```
 2) Criar ambiente virtual (venv)
 ```bash
 Windows (PowerShell)
