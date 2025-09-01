@@ -41,9 +41,11 @@ git clone https://github.com/sabrinads23/TrabalhoFinal_SGHSS_Backend.git
 # Entrar na pasta
 cd TrabalhoFinal_SGHSS_Backend
 ```
-Ou baixar como ZIP, 
+Ou baixar como ZIP
+```bash
 Em Code o arquivo SGHSS_4493981.zip → Download ZIP no GitHub.
 Extraia o ZIP.
+```
 2) Abra o terminal CMD e entre na pasta onde o arquivo foi extraido.
 ```bash
 Exemplo:
