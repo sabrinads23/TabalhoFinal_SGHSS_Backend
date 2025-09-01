@@ -90,6 +90,7 @@ Configure os demais itens conforme a documentação anexada "Endpoints_SGHSS"
 • Parâmetros e estruturas JSON 
 Comece com Registrar Administrador e depois faça login como o administrador criado para pegar o token JWT
 Envie esse token como Bearer Token nas demais requisições
+Dica: desative o proxy sistem em settings do Postman caso apresente algum problema ao testar a api
 ```
 7) Parar o servidor
 ```bash
